@@ -1,5 +1,20 @@
 #Fatiamento e índices de strings
-url = "bytebank.com/cambio?quantidade=100&moedaOrigem=real&moedaDestino=dolar"
+#url = "bytebank.com/cambio?quantidade=100&moedaOrigem=real&moedaDestino=dolar"
+url = "     "
+
+#Limpando os dados
+#url = url.replace(" ", "")
+#Também posso usar o strip()
+#Que tira todos os espaçõs antes e depois da string
+url = url.strip()
+#Ou lstrip() ou rstrip que tira o espaço antes ou depois
+
+#Validação da URL
+if (url == ""):
+	#LEvantar uma exceção
+	#Mostrar um erro para o usuário
+	raise ValueError("A URL está vazia")
+
 indice_interrogacao = url.find('?')
 url_base = url[:indice_interrogacao]
 url_parametros = url[indice_interrogacao+1:]
@@ -7,10 +22,10 @@ url_parametros = url[indice_interrogacao+1:]
 parametro_busca = 'quantidade'
 indice_parametro = url_parametros.find(parametro_busca)
 indice_valor = indice_parametro + len(parametro_busca) + 1
-
 indice_e_comercial = url_parametros.find('&', indice_valor)
 if indice_e_comercial == -1:
     valor = url_parametros[indice_valor:]
 else:
     valor = url_parametros[indice_valor:indice_e_comercial]
+
 print(valor)
