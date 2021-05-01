@@ -48,8 +48,14 @@ class ExtratorUrl:
 	def __str__(self):
 		return self.url
 
+	#Serve para comparar objetos
+	def __eq__(self, other):
+		return self.url == other.url
+
+
 #extrator_url = ExtratorUrl(" ")
 #extrator_url = ExtratorUrl(None)
 extrator_url = ExtratorUrl("bytebank.com/cambio")
+extrator_url2 = ExtratorUrl("bytebank.com/cambio")
 print(f"O tamanho da URL é: {len(extrator_url)}")
-print(extrator_url)
+print(extrator_url == extrator_url2)
