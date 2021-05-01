@@ -45,8 +45,11 @@ class ExtratorUrl:
 	def __len__(self):
 		return len(self.url)
 
+	def __str__(self):
+		return self.url
 
 #extrator_url = ExtratorUrl(" ")
 #extrator_url = ExtratorUrl(None)
 extrator_url = ExtratorUrl("bytebank.com/cambio")
 print(f"O tamanho da URL é: {len(extrator_url)}")
+print(extrator_url)
